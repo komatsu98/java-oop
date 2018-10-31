@@ -10,12 +10,14 @@ public class Main {
 		while(choose!=0) {
 			System.out.println("\nNhập vào chức năng bạn muốn sử dụng:");
 			System.out.println("________________MENU________________\n");
-			System.out.println("1. Xem danh sach sinh vien.");
-			System.out.println("2. Xem danh sach giang vien.");
-			System.out.println("3. Xem danh sach lop");
-			System.out.println("4. Xem danh sach hoc phan");
-			System.out.println("5. Sinh vien dang ky lop hoc");
-	        System.out.print("\nChon chuc nang: ");
+			System.out.println("1. Quản lý sinh viên.");
+			System.out.println("2. Quản lý giảng viên.");
+			System.out.println("3. Quản lý lớp học");
+			System.out.println("4. Quản lý học phần");
+			System.out.println("5. Quản lý đồ án");
+			System.out.println("6. Sinh viên đăng ký lớp học");
+			System.out.println("0. Thoát");
+	        System.out.print("\nChọn chức năng: ");
 	        Scanner  Input = new Scanner(System.in);
 	        choose = Input.nextInt();
 	        switch(choose) {
@@ -26,9 +28,9 @@ public class Main {
 	        	 data.printStudents();
 	        	 
 	        	 
-	        	 while(chooseInStudent != 4) {
+	        	 while(chooseInStudent != 5) {
 	        		 System.out.println("Chọn các chức năng với quản lý sinh viên");
-	            	 System.out.println("1. Tìm kiếm    2. Thêm   3.Xóa     4.Thoát");
+	            	 System.out.println("1.Tìm kiếm   2.Thêm   3.Xóa   4.D/s lớp SV học   5.Thoát");
 	            	 System.out.print("Chon chuc nang: ");
 	            	 chooseInStudent = Input.nextInt();
 	            	 switch(chooseInStudent) {
@@ -53,7 +55,12 @@ public class Main {
 	            		 studentId = Input.nextLine();
 	            		 data.deleteStudentById(studentId);
 	            		 break;
-	            	 case 4: break;
+	            	 case 4:
+	            		 System.out.print("Nhap vao ma so sinh vien: ");
+	            		 Input.nextLine();
+	            		 studentId = Input.nextLine();
+	            		 data.getClassByStudentId(studentId);
+	            	 case 5: break;
 	            	 }
 	        	 }
 	        case 2: System.out.println("danh sach giang vien"); break;

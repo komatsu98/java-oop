@@ -10,7 +10,15 @@ public class Student extends HustPerson{
 		this.major = major;
 		this.program = program;
 	}
-
+	
+	public static void printStudents(Student student) {	
+		System.out.println("Họ tên: " + student.fullName + 
+					 "\n "+ "MSSV: " + student.numberId + 
+					 "\n "+ "Major: " + student.getMajor() +
+					 "\n "+ "Program: " + student.getProgram() +"\n ") ;
+		
+	}
+	
 	public String getMajor() {
 		return major;
 	}

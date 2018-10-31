@@ -5,22 +5,24 @@ import java.util.List;
 
 
 public class Class {
-	private int classId;
+	private String classId;
 	private String courseId;
 	private String teacherId;
 	private Teacher teacher;
 	private Course course;
+	private String[] studentIds;
 	private List<Student> students;
 	
-	public Class(int classId, String courseId, String teacherId) {
+	public Class(String classId, String courseId, String teacherId, String[] studentIds) {
 		this.classId = classId;
 		this.courseId = courseId;
 		this.teacherId = teacherId;
+		this.studentIds = studentIds;
 	}
-	public int getClassId() {
+	public String getClassId() {
 		return classId;
 	}
-	public void setClassId(int classId) {
+	public void setClassId(String classId) {
 		this.classId = classId;
 	}
 	public String getCourseId() {
@@ -52,6 +54,12 @@ public class Class {
 	}
 	public void setStudents(List<Student> students) {
 		this.students = students;
+	}
+	public String[] getStudentIds() {
+		return studentIds;
+	}
+	public void setStudentIds(String[] studentIds) {
+		this.studentIds = studentIds;
 	}
 	
 	

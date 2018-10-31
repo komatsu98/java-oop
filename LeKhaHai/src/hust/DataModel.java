@@ -8,7 +8,10 @@ public class DataModel {
 	private List<Student> students = new ArrayList<Student>();
 	private List<Course> courses = new ArrayList<Course>();
 	private List<Teacher> teachers = new ArrayList<Teacher>();
+	private List<Class> classes = new ArrayList<Class>();
 	
+	
+	//constructor
 	public List<Student> getStudents() {
 		if(students.isEmpty()) {
 			students.add(new Student("Lê Khả Hải","20164835","CNTT", "KSTN"));
@@ -23,11 +26,8 @@ public class DataModel {
 		this.getStudents();
 		int i = 1;
 		for(Student student:this.students) {
-			System.out.println("========================");
-			System.out.println(i + ".Họ tên: " + student.fullName + 
-					 "\n "+ "MSSV: " + student.numberId + 
-					 "\n "+ "Major: " + student.getMajor() +
-					 "\n "+ "Program: " + student.getProgram() + "\n ") ;
+			System.out.print(i+". ");
+			Student.printStudents(student);
 			i++;
 		}		
 	}
@@ -35,14 +35,9 @@ public class DataModel {
 		int i = 0;
 		for(Student student:this.students) {
 			if(student.numberId.equals(id)) {
-				System.out.println("========================");
-				System.out.println(".Họ tên: " + student.fullName + 
-						 "\n "+ "MSSV: " + student.numberId + 
-						 "\n "+ "Major: " + student.getMajor() +
-						 "\n "+ "Program: " + student.getProgram() + "\n ") ;
+				Student.printStudents(student);
 				i++;
-			}
-			
+			}	
 		}
 		if(i==0) System.out.println("Không tìm thấy SV có id: "+ id);
 	}
@@ -57,26 +52,25 @@ public class DataModel {
 				students.remove(j);
 				i++;
 				break;
-			} else j++;
-			
+			} else j++;			
 		}
 		if(i==0) System.out.println("Không tìm thấy SV có id: "+ id);
 		else this.printStudents();
-	}
-	
-	
+	}	
 	
 	public void setStudents(List<Student> students) {
 		this.students = students;
 	}
+	
+	
 	public List<Course> getCourses() {
 		if(courses.isEmpty()) {
-			courses.add(new Course("IT3031", "Lập trình hướng đối tượng", 2));
-			courses.add(new Course("IT3022", "Linux và phần mềm mã nguồn mở", 2));
-			courses.add(new Course("IT3023", "Điện tử số", 2));
-			courses.add(new Course("IT3033", "Tiếng Anh CNTT", 3));
-			courses.add(new Course("IT3034", "Mạng máy tính", 3));
-			courses.add(new Course("IT3035", "Cơ sở dữ liệu", 3));
+			courses.add(new Course("IT3001", "Lập trình hướng đối tượng", 2));
+			courses.add(new Course("IT3002", "Linux và phần mềm mã nguồn mở", 2));
+			courses.add(new Course("IT3003", "Điện tử số", 2));
+			courses.add(new Course("IT3004", "Tiếng Anh CNTT", 3));
+			courses.add(new Course("IT3005", "Mạng máy tính", 3));
+			courses.add(new Course("IT3006", "Cơ sở dữ liệu", 3));
 			courses.add(new Course("TD", "Thể chất D", 0));
 		}
 		return courses;
@@ -95,4 +89,36 @@ public class DataModel {
 	public void setTeachers(List<Teacher> teachers) {
 		this.teachers = teachers;
 	}
+	public List<Class> getClasses() {
+		if(classes.isEmpty()) {
+			String[] studentIds1 = {"20164835", "20164834", "20164836"};
+			classes.add(new Class("Lop1", "IT3001", "hungnt", studentIds1));
+		}
+		return classes;
+	}
+public void getClassByStudentId(String id) {
+		this.getClasses();
+		int x = 0;
+		for(Class lop:this.classes) {
+			String[] A = lop.getStudentIds();
+			for(int i = 0; i< A.length; i++) {
+				if(A[i].equals(id)) {
+				 System.out.println("\nSinh viên");
+				 this.getStudentById(id);
+				 System.out.println("Đang học lớp có id: " + lop.getClassId() + " \n");
+				x++;
+				}
+			}
+		if( x == 0) 
+			{
+			this.getStudentById(id);
+			System.out.println("\nSinh viên này chưa học lớp nào!\n");
+			}
+		
+		}
+	}
+	public void setClasses(List<Class> classes) {
+		this.classes = classes;
+	}
+	
 }
