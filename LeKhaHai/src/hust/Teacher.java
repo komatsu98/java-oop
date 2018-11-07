@@ -16,4 +16,9 @@ public class Teacher extends HustPerson {
 		this.department = department;
 	}
 	
+	public static void printTeacher(Teacher tc, int i) {
+		System.out.println(i + ". Họ tên giảng viên: " + tc.getFullName());
+		System.out.println("Mã số: " + tc.getNumberId());
+		System.out.println("Bộ phận: " + tc.getDepartment() + " \n");
+	}
 }

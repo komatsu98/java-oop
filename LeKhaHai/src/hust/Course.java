@@ -31,5 +31,10 @@ public class Course {
 		this.credit = credit;
 	}
 	
+	public static void printCourse(Course tc, int i) {
+		System.out.println(i + ". Môn học: " + tc.getCourseName());
+		System.out.println("Mã số: " + tc.getCourseId());
+		System.out.println("Tín chỉ: " + tc.getCredit() + " \n");
+	}
 	
 }
