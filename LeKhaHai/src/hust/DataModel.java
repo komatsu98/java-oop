@@ -28,6 +28,11 @@ public class DataModel {
 			students.add(new Student("Nguyễn Như Hoàng", "20164800", "CNTT", "KSTN"));
 			students.add(new Student("Lê Công Thành", "20164836", "CNTT", "KSTN"));
 			students.add(new Student("Nguyễn Tiến Tài", "20164834", "CNTT", "KSTN"));
+			students.add(new Student("Lê Bá Trường Giang", "20164764", "CNTT", "KSTN"));
+			students.add(new Student("Vương Trung Hiếu", "20161599", "CNTT", "KSTN"));
+			students.add(new Student("Trần Quang Huy", "20164778", "CNTT", "KSTN"));
+			students.add(new Student("Nguyễn Tuấn Hưng", "20162031", "CNTT", "KSTN"));
+			students.add(new Student("Nguyễn Đình Lịch", "20162573", "CNTT", "KSTN"));
 		}
 		return students;
 	}
@@ -41,13 +46,48 @@ public class DataModel {
 			registerClasses.add(new RegisterClass("20181","20164800"));
 			registerClasses.add(new RegisterClass("20181","20164836"));
 			registerClasses.add(new RegisterClass("20181","20164834"));
+			registerClasses.add(new RegisterClass("20181","20164778"));
+			registerClasses.add(new RegisterClass("20181","20162031"));
+			registerClasses.add(new RegisterClass("20181","20162573"));
 			
 			registerClasses.add(new RegisterClass("20182","20164835"));
 			registerClasses.add(new RegisterClass("20182","20164836"));
+			registerClasses.add(new RegisterClass("20182","20164764"));
 			registerClasses.add(new RegisterClass("20182","20164834"));
+			registerClasses.add(new RegisterClass("20182","20161599"));
 			
 			registerClasses.add(new RegisterClass("20183","20160656"));
 			registerClasses.add(new RegisterClass("20183","20164800"));
+			registerClasses.add(new RegisterClass("20183","20164764"));
+			registerClasses.add(new RegisterClass("20183","20161599"));
+			registerClasses.add(new RegisterClass("20183","20164778"));
+			registerClasses.add(new RegisterClass("20183","20162031"));
+			registerClasses.add(new RegisterClass("20183","20162573"));
+			
+			registerClasses.add(new RegisterClass("20184","20164835"));
+			registerClasses.add(new RegisterClass("20184","20164800"));
+			registerClasses.add(new RegisterClass("20184","20164834"));
+			registerClasses.add(new RegisterClass("20184","20161599"));
+			registerClasses.add(new RegisterClass("20184","20162031"));
+			
+			registerClasses.add(new RegisterClass("20185","20162573"));
+			registerClasses.add(new RegisterClass("20185","20164778"));
+			registerClasses.add(new RegisterClass("20185","20164764"));
+			
+			registerClasses.add(new RegisterClass("20186","20160656"));
+			registerClasses.add(new RegisterClass("20186","20164836"));
+			
+			registerClasses.add(new RegisterClass("20187","20164835"));
+			registerClasses.add(new RegisterClass("20187","20164800"));
+			registerClasses.add(new RegisterClass("20187","20164834"));
+			registerClasses.add(new RegisterClass("20187","20161599"));
+			registerClasses.add(new RegisterClass("20187","20162031"));			
+			registerClasses.add(new RegisterClass("20187","20162573"));
+			registerClasses.add(new RegisterClass("20187","20164778"));
+			registerClasses.add(new RegisterClass("20187","20164764"));			
+			registerClasses.add(new RegisterClass("20187","20160656"));
+			registerClasses.add(new RegisterClass("20187","20164836"));
+			
 		}
 		return registerClasses;
 	}
@@ -205,14 +245,17 @@ public class DataModel {
 			Teacher.printTeacher(tc, i);
 			i++;
 		}
-	}
-	
+	}	
 
 	public List<Class> getClasses() {
 		if(classes.isEmpty()) {
 			classes.add(new Class("20181", "IT3005", "hungnt"));
 			classes.add(new Class("20182", "IT3002", "trangntt"));
-			classes.add(new Class("20183", "IT3006", "linhttd"));		
+			classes.add(new Class("20183", "IT3006", "linhttd"));
+			classes.add(new Class("20184", "IT3001", "anhnk"));
+			classes.add(new Class("20185", "IT3003", "sondt"));
+			classes.add(new Class("20186", "IT3004", "ngantt"));
+			classes.add(new Class("20187", "TC2", "icdi"));
 		}
 		return classes;
 	}
